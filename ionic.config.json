@@ -1,0 +1,7 @@
+{
+  "name": "crudTeste",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
