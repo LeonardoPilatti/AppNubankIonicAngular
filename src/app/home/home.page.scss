@@ -1,27 +1,133 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-header {
+  --min-height: 100px;
+  ion-toolbar {
+    ion-title {
+      align-items: flex-end;
+      img {
+        width: 45px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+      span {
+        font-size: 22px;
+      }
+      ion-button {
+        display: block;
+      }
+    }
+  }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-content {
+  .background {
+    opacity: 0;
+    .bank-information {
+      .qrcode {
+        width: 100px;
+        margin: 16px auto;
+        display: block;
+      }
+      span {
+        margin: 5px 0;
+        display: block;
+        font-size: 14px;
+      }
+    }
+    ion-list {
+      margin-top: 32px;
+      background: transparent;
+
+      ion-item {
+        color: #fff;
+        --background: transparent;
+        --detail-icon-opacity: 1;
+
+        &:first-of-type {
+          /// o primeiro item da lista;
+          border-top: 0.55px solid rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+    .logout {
+      margin-top: 32px;
+      margin-bottom: 100px;
+    }
+  }
+  .blocks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 999;
+
+    &.fixed {
+      position: fixed;
+      top: 110px;
+      overflow-y: hidden; /// quando tiver esta classe, não dá para dar scroll para ver os blocos;
+    }
+
+    ion-card {
+      .cash {
+        span {
+          &.value {
+            /// que tenha a classe cash e o value junto;
+            font-size: 30px;
+            display: block;
+          }
+          &.blue {
+            color: #0ab9cd;
+          }
+          &.green {
+            color: #94c22b;
+          }
+        }
+      }
+      .footer {
+        background: #f4f5f8;
+      }
+
+      .title {
+        font-size: 20px;
+      }
+
+      .gift {
+        font-size: 30px;
+      }
+    }
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+ion-footer {
+  &.hidden {
+    height: 0;
+    ion-slides {
+      opacity: 0;
+    }
+  }
+  ion-slide {
+    .container {
+      width: 100%;
+      height: 100px;
+      background-color: var(--ion-color-primary-tint);
+      padding: 10px;
+      margin: 0 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-  color: #8c8c8c;
+      ion-icon {
+        font-size: 24px;
+      }
 
-  margin: 0;
+      span {
+        font-size: 16px;
+      }
+    }
+  }
 }
 
-#container a {
-  text-decoration: none;
+.opacity-transition {
+  transition: opacity 0.3s;
 }
